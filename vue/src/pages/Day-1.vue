@@ -3,7 +3,8 @@
   <div class="wrapper">
     <div class="circle">
       <span class="time">
-        <span class="time__minute">{{ minuteString }}</span>:<span class="time__second">{{ secondString }}</span>
+        <span class="time__minute">{{ minuteString }}</span
+        >:<span class="time__second">{{ secondString }}</span>
       </span>
       <a class="btn-start">Start</a>
       <a class="btn-setting" @click="showModal()">
@@ -14,7 +15,6 @@
       <circle class="ring" cx="260" cy="260" r="255"></circle>
     </svg>
   </div>
-  <a-button>Test</a-button>
   <a-modal
     title="Settings"
     :visible="visible"
@@ -27,13 +27,9 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-// import { Modal } from 'ant-design-vue';
 
 @Options({
   props: {},
-  // components: {
-  //   'a-modal': Modal,
-  // },
 })
 export default class Day1 extends Vue {
   public minute = 0;

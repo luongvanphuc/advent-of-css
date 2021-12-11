@@ -4,6 +4,7 @@ module.exports = {
       less: {
         lessOptions: {
           javascriptEnabled: true,
+          math: 'always',
         },
       },
     },
