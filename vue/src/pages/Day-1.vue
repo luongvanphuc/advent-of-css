@@ -6,35 +6,140 @@
         <span class="time__minute">{{ minuteString }}</span
         >:<span class="time__second">{{ secondString }}</span>
       </span>
-      <a class="btn-start">Start</a>
+      <a class="btn-start" @click="toggleTimer()">
+        {{ animating ? 'Stop' : 'Start' }}
+      </a>
       <a class="btn-setting" @click="showModal()">
         <img class="btn-setting__icon" src="@/assets/icons/gear.svg" />
       </a>
     </div>
-    <svg height="520" width="520">
-      <circle class="ring" cx="260" cy="260" r="255"></circle>
+    <svg class="ring-svg" height="520" width="520">
+      <circle
+        v-bind:style="{ '--duration': cssDuration, '--ring-color': ringColor }"
+        v-bind:class="{ animate: animating }"
+        class="ring"
+        cx="260"
+        cy="260"
+        r="255"
+      ></circle>
+    </svg>
+
+    <svg
+      class="drop-svg"
+      width="622"
+      height="637"
+      viewBox="0 0 622 637"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_dd_108_2)">
+        <circle cx="308" cy="320" r="259" fill="black" />
+      </g>
+      <defs>
+        <filter
+          id="filter0_dd_108_2"
+          x="0"
+          y="-5"
+          width="622"
+          height="642"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dx="5" dy="-16" />
+          <feGaussianBlur stdDeviation="25" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_108_2"
+          />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dx="-5" dy="14" />
+          <feGaussianBlur stdDeviation="22" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="effect1_dropShadow_108_2"
+            result="effect2_dropShadow_108_2"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect2_dropShadow_108_2"
+            result="shape"
+          />
+        </filter>
+      </defs>
     </svg>
   </div>
   <a-modal
     title="Settings"
     :visible="visible"
     @ok="handleSubmitSetting"
-    @cancel="handleCancel"
+    @cancel="hideModal"
   >
-    <p>Hello world</p>
+    <a-form :model="formState" :label-col="{ span: 4 }">
+      <a-form-item label="Minutes">
+        <a-input-number v-model:value="formState.minutes" :min="0" :max="59" />
+      </a-form-item>
+      <a-form-item label="Seconds">
+        <a-input-number v-model:value="formState.seconds" :min="0" :max="59" />
+      </a-form-item>
+    </a-form>
   </a-modal>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { reactive } from 'vue';
+import type { UnwrapRef } from 'vue';
+import { Modal } from 'ant-design-vue';
+
+interface FormState {
+  minutes: number;
+  seconds: number;
+}
+
+const MAX_SECONDS = 3599; // 59:59 (m:s)
 
 @Options({
   props: {},
 })
 export default class Day1 extends Vue {
-  public minute = 0;
-  public second = 0;
   public visible = false;
+  public duration = 0;
+  public animating = false;
+  public ringColor = '#900a0a';
+
+  private minute = 0;
+  private second = 0;
+  private totalInSeconds = 0;
+  private timer = 0;
+
+  public formState: UnwrapRef<FormState> = reactive({
+    minutes: 0,
+    seconds: 0,
+  });
 
   get minuteString(): string {
     return `${this.minute}`.padStart(2, '0');
@@ -44,20 +149,57 @@ export default class Day1 extends Vue {
     return `${this.second}`.padStart(2, '0');
   }
 
-  public created(): void {
-    this.minute = 15;
-    this.second = 0;
-
-    setInterval(() => {
-      this.second += 1;
-    }, 1000);
+  get cssDuration(): string {
+    return `${this.duration}s`;
   }
 
   public handleSubmitSetting(): void {
-    console.log('hello');
+    const { minutes = 0, seconds = 0 } = this.formState;
+    this.totalInSeconds = Math.min(MAX_SECONDS, minutes * 60 + seconds);
+    this.duration = this.totalInSeconds;
+    this.refreshNumbers();
+    this.hideModal();
   }
 
-  public handleCancel(): void {
+  public toggleTimer(): void {
+    if (!this.animating && this.totalInSeconds > 0) {
+      this.animating = true;
+      this.ringColor = '#900a0a';
+      this.timer = setInterval(() => {
+        this.totalInSeconds > 1 ? (this.totalInSeconds -= 1) : this.finish();
+        this.refreshNumbers();
+      }, 1000);
+    } else {
+      this.reset();
+    }
+  }
+
+  private reset(): void {
+    clearInterval(this.timer);
+    this.totalInSeconds = 0;
+    this.duration = 0;
+    this.minute = 0;
+    this.second = 0;
+    this.animating = false;
+  }
+
+  private finish(): void {
+    this.reset();
+    this.ringColor = 'green';
+    Modal.info({ title: "Time's up" });
+  }
+
+  private refreshNumbers(): void {
+    const timeValue = new Date(this.totalInSeconds * 1000)
+      .toISOString()
+      .substr(14, 5);
+    const [m, s] = timeValue.split(':');
+
+    this.minute = +m;
+    this.second = +s;
+  }
+
+  public hideModal(): void {
     this.visible = false;
   }
 
@@ -97,12 +239,14 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
   border: 10px solid #000;
   box-sizing: content-box;
+  z-index: 2;
 }
 
 .time {
   display: inline-block;
-  margin-top: 110px;
+  margin-top: 140px;
   font-size: 196px;
+  line-height: 196px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   &__minute,
@@ -133,34 +277,48 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   margin-right: -$letter-spacing; // hack to remove spacing at last letter
   text-transform: uppercase;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  user-select: none;
 }
 
 .btn-setting {
   width: 50px;
   cursor: pointer;
+  user-select: none;
 
   &__icon {
-    width: 26px;
+    width: 30px;
   }
 }
 
-svg {
+.ring-svg,
+.drop-svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   user-select: none;
   pointer-events: none;
-  // box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+}
+
+.ring-svg {
+  z-index: 3;
+}
+
+.drop-svg {
+  z-index: 1;
 }
 
 .ring {
   fill: transparent;
-  stroke: #900a0a;
+  stroke: var(--ring-color);
   stroke-width: 10;
   stroke-dasharray: $perimeter;
   stroke-dashoffset: 0;
-  animation: rotate 6s linear 1;
+
+  &.animate {
+    animation: rotate var(--duration) linear 1;
+  }
 }
 
 @keyframes rotate {
