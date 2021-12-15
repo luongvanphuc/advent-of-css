@@ -1,0 +1,15 @@
+.links {
+  list-style: none;
+  margin: 20px 0 40px;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    
+    &:not(:last-child) {
+      border-right: 1px solid var(--c-theme);
+    }
+  }
+}
