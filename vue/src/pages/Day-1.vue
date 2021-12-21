@@ -221,6 +221,7 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   height: 640px;
   background: #2b2a30;
   color: #fff;
+  text-align: center;
 }
 
 .circle {

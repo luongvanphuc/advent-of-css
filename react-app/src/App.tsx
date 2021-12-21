@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import './assets/scss/index.scss';
+import './assets/scss/antd/index.less';
 import Layout from './layout';
 import Day1 from './pages/Day1';
 import NotFound from './pages/NotFound';
