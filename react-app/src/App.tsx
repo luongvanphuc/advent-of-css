@@ -2,8 +2,10 @@ import React, { createElement } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import './assets/scss/index.scss';
+import './assets/scss/tailwind.scss';
 import './assets/scss/antd/index.less';
+import './assets/scss/index.scss';
+
 import Layout from './layout';
 import Day1 from './pages/Day1';
 import NotFound from './pages/NotFound';

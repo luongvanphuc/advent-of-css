@@ -316,14 +316,9 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   stroke-width: 10;
   stroke-dasharray: $perimeter;
   stroke-dashoffset: 0;
+  transition: stroke-dashoffset var(--duration) ease-in-out;
 
   &.animate {
-    animation: rotate var(--duration) linear 1;
-  }
-}
-
-@keyframes rotate {
-  to {
     stroke-dashoffset: -$perimeter;
   }
 }
