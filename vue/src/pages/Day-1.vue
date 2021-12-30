@@ -141,15 +141,15 @@ export default class Day1 extends Vue {
     seconds: 0,
   });
 
-  get minuteString(): string {
+  public get minuteString(): string {
     return `${this.minute}`.padStart(2, '0');
   }
 
-  get secondString(): string {
+  public get secondString(): string {
     return `${this.second}`.padStart(2, '0');
   }
 
-  get cssDuration(): string {
+  public get cssDuration(): string {
     return `${this.duration}s`;
   }
 
@@ -316,7 +316,7 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   stroke-width: 10;
   stroke-dasharray: $perimeter;
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset var(--duration) ease-in-out;
+  transition: stroke-dashoffset var(--duration) linear;
 
   &.animate {
     stroke-dashoffset: -$perimeter;

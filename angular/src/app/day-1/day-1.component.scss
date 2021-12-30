@@ -68,6 +68,7 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #fff;
   user-select: none;
+  cursor: pointer;
 }
 
 .btn-setting {
@@ -76,7 +77,6 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
   user-select: none;
 
   &__icon {
-    margin: auto;
     width: 30px;
   }
 }

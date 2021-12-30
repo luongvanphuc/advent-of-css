@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/scss/antd.less",
+              "src/assets/scss/tailwind.scss",
               "src/assets/scss/index.scss"
             ],
             "scripts": [],
@@ -100,6 +102,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -132,5 +135,15 @@
   "defaultProject": "angular",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "style": "scss",
+      "changeDetection": "OnPush"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
   }
 }

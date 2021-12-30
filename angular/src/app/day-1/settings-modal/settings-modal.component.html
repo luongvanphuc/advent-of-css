@@ -1,0 +1,27 @@
+<form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label>
+      Minutes
+    </nz-form-label>
+    <nz-form-control>
+      <nz-input-number formControlName="minutes" placeholder="Minutes"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>
+      Seconds
+    </nz-form-label>
+    <nz-form-control>
+      <nz-input-number formControlName="seconds" nz-input-number placeholder="Seconds"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+
+  <div class="text-right mt-4">
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
+
+  </div>
+</form>
