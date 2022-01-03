@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet"></link>
       </Helmet>
-      <div className="App">
+      <div className="flex flex-col h-full">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Day1 />} />

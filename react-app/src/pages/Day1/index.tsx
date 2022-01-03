@@ -4,7 +4,7 @@ import { FormInstance, InputNumber, Modal, Form } from 'antd';
 import { ReactComponent as DropSVG } from './drop-svg.svg';
 import { ReactComponent as GearIcon } from 'src/assets/icons/gear.svg';
 
-import styles from './day1.module.scss';
+import styles from './styles.module.scss';
 
 const Day1 = (): ReactElement => {
   const MAX_SECONDS = 3599; // 59:59 (m:s)
