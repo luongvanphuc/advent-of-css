@@ -4,7 +4,7 @@ const Card = ({ children, className, title }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.card + (className ? ` ${className}` : '')}>
       {title &&
-        <div className="mx-10 mt-14 mb-6 text-3xl font-bold">{title}</div>
+        <div className="mx-10 my-14 text-3xl font-bold">{title}</div>
       }
       {children}
     </div>

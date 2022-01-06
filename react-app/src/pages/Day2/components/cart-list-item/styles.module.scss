@@ -1,0 +1,38 @@
+.dish {
+  min-height: 145px;
+
+  &__inner {
+    display: flex;
+    margin: 32px 0 0 26px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &__img {
+    width: 144px;
+    height: auto;
+    transform: translate(-16px, -16px);
+  }
+
+  &__name {
+    width: 80%;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  &__price {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+
+  &__btn-add {
+    position: absolute;
+    bottom: -12px;
+    width: 130px;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #6B00F5;
+  }
+}
