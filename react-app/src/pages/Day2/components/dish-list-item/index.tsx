@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { Dish } from '../../models';
 import styles from './styles.module.scss';
 
-const DishListItem = ({ item }: Props): JSX.Element => {
+const DishListItem = ({ item, onAddToCart }: Props): JSX.Element => {
   return (
     <div className={styles.dish}>
       <div className={styles.dish__inner} style={{ background: item.bgColor }}>
@@ -15,7 +15,7 @@ const DishListItem = ({ item }: Props): JSX.Element => {
           <div className={styles.dish__price}>
             ${item.price}
           </div>
-          <Button className={styles['dish__btn-add']} type="primary" shape="round" size="middle">
+          <Button className={styles['dish__btn-add']} type="primary" shape="round" size="middle" onClick={(): void => onAddToCart(item)}>
             Add to Cart
           </Button>
         </div>
@@ -26,6 +26,7 @@ const DishListItem = ({ item }: Props): JSX.Element => {
 
 type Props = {
   item: Dish;
+  onAddToCart: (item: Dish) => void,
 }
 
 export { DishListItem };

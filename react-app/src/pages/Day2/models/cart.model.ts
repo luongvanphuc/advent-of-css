@@ -8,6 +8,6 @@ export interface Cart {
 }
 
 export interface CartItem extends Dish {
-  dishId: number;
+  dishId: string;
   quantity: number;
 }
