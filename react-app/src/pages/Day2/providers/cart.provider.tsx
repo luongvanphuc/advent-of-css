@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { Cart, Dish } from '../models';
+import { Cart, CartItem, Dish } from '../models';
 
 const EMPTY_CART: Cart = {
   items: [],
@@ -10,7 +10,7 @@ const EMPTY_CART: Cart = {
 
 export interface ICartContext {
   cart: Cart;
-  addItem: (item: Dish) => void,
+  addItem: (item: Dish | CartItem) => void,
   decreaseItemQty: (itemId: string) => void,
 }
 
@@ -25,8 +25,8 @@ export const CartProvider = (props: { children: ReactNode }): JSX.Element => {
 
   const generateId = (): string => Math.random().toString(36).substring(2, 9);
 
-  const addItem = (item: Dish): void => {
-    const existingItem = cart.items.find(i => i.dishId === item.id);
+  const addItem = (item: Dish | CartItem): void => {
+    const existingItem = cart.items.find(i => i.dishId === item.id || i.id === item.id);
 
     if (existingItem) {
       existingItem.quantity += 1;

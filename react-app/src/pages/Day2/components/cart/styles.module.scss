@@ -1,0 +1,20 @@
+.totalSection {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 10px;
+  align-items: center;
+  justify-items: flex-end;
+  font-weight: bold;
+
+  &__label {
+    font-size: 16px;
+  }
+
+  &__price {
+    font-size: 28px;
+  }
+
+  &__totalPrice {
+    color: var(--color-theme);
+  }
+}

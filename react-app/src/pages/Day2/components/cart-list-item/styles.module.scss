@@ -1,22 +1,36 @@
-.dish {
+.item {
   display: grid;
   grid-template-columns: 64px auto;
   gap: 10px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--color-hr);
+
+  &:last-child {
+    border-bottom-width: 5px;
+  }
 
   &__img {
     height: auto;
   }
 
+  &_btnAdjust {
+    background-color: var(--color-theme);
+    border-color: var(--color-theme);
+  }
+
   &__name {
-    width: 80%;
-    margin-bottom: 15px;
     font-size: 18px;
     line-height: 20px;
   }
 
   &__price {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__totalPrice {
+    font-size: 28px;
     font-weight: bold;
   }
 }
