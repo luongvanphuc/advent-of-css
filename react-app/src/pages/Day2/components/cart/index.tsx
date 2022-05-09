@@ -19,14 +19,18 @@ const Cart = (): JSX.Element => {
       {cart.items.length === 0 && <p>Your cart is empty.</p>}
       {cart.items.length > 0 &&
         <>
-          {cart.items.map(item =>
-            <CartListItem
-              item={item}
-              key={item.id}
-              onIncrease={handleAddItem}
-              onDecrease={handleDecreaseQty}
-            />
-          )}
+          <div>
+            {cart.items.map(item =>
+              <div className={styles.cartItem}>
+                <CartListItem
+                  item={item}
+                  key={item.id}
+                  onIncrease={handleAddItem}
+                  onDecrease={handleDecreaseQty}
+                />
+              </div>
+            )}
+          </div>
           <div className={styles.totalSection}>
             <span className={styles.totalSection__label}>Subtotal:</span>
             <span className={styles.totalSection__price}>${cart.subtotal.toFixed(2)}</span>
