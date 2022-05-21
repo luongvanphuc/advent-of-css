@@ -1,0 +1,6 @@
+<div class="mb-8">
+  <app-dish-list-item *ngFor="let dish of items"
+    [item]="dish"
+    (onAddToCart)="handleAddItemToCart($event)"
+  ></app-dish-list-item>
+</div>

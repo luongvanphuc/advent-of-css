@@ -1,0 +1,35 @@
+<div class="item" *ngIf="item">
+  <img class="item__img" [attr.src]="item.image" />
+  <div>
+    <div class="item__name">
+      {{ item.name }}
+    </div>
+    <div class="item__price">
+      ${{ item.price }}
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between w-32">
+        <button
+          class="item_btn-adjust"
+          nz-button
+          nzType="primary"
+          (click)="onDecrease.emit()"
+        >
+          <img src="/assets/images/day-2/chevron-left.svg">
+        </button>
+        <span>{{ item.quantity }}</span>
+        <button
+          class="item_btn-adjust"
+          nz-button
+          nzType="primary"
+          (click)="onIncrease.emit()"
+        >
+          <img src="/assets/images/day-2/chevron-right.svg">
+        </button>
+      </div>
+      <span class="item__total-price">
+        ${{ item.price * item.quantity }}
+      </span>
+    </div>
+  </div>
+</div>

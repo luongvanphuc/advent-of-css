@@ -1,0 +1,33 @@
+.cart-item {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--color-hr);
+
+  &:last-child {
+    border-bottom-width: 5px;
+  }
+}
+
+.total-section {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 10px;
+  align-items: center;
+  justify-items: flex-end;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  font-weight: bold;
+
+  &__label {
+    font-size: 16px;
+  }
+
+  &__price {
+    font-size: 28px;
+  }
+
+  &__total-price {
+    color: var(--color-theme);
+  }
+}

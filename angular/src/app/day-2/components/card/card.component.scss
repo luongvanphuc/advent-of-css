@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  z-index: 1;
+}
+
+.card {
+  display: block;
+  width: 375px;
+  height: 700px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+  background-color: #fff;
+  border-radius: 25px;
+}

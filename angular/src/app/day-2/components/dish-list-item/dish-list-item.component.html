@@ -1,0 +1,22 @@
+<div class="dish">
+  <div class="dish__inner" [style.background]="item.bgColor">
+    <img class="dish__img" [attr.src]="item.image" />
+    <div class="relative pt-6">
+      <div class="dish__name">
+        {{ item.name }}
+      </div>
+      <div class="dish__price">
+        ${{ item.price }}
+      </div>
+      <button
+        class="dish__btn-add"
+        nz-button
+        nzType="primary"
+        nzShape="round"
+        (click)="onAddToCart.emit(item)"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

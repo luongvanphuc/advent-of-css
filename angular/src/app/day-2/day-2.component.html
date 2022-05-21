@@ -1,1 +1,13 @@
-Hello world
+<div class="wrapper relative flex justify-center items-start gap-14">
+  <img class="bg-left absolute left-0" src="/assets/images/day-2/bg__left.svg">
+  <img class="absolute top-0 right-0" src="/assets/images/day-2/bg__top-right.svg">
+  <img class="bg-bottom-right absolute bottom-0 right-0" src="/assets/images/day-2/bg__btm-right.svg">
+
+  <app-card title="To Go Menu">
+    <app-dish-list [items]="dishes"></app-dish-list>
+  </app-card>
+
+  <app-card title="Your Cart">
+    <app-cart></app-cart>
+  </app-card>
+</div>

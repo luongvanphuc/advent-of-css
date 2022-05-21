@@ -1,0 +1,23 @@
+<div class="mx-8 mb-10" *ngIf="cart$ | async as cart">
+  <p *ngIf="cart.items.length === 0">Your cart is empty.</p>
+
+  <ng-container *ngIf="cart.items.length > 0">
+    <div>
+      <div class="cart-item" *ngFor="let item of cart.items; trackBy: trackByFn">
+        <app-cart-list-item
+          [item]="item"
+          (onIncrease)="handleAddItem(item)"
+          (onDecrease)="handleDecreaseQty(item)"
+        ></app-cart-list-item>
+      </div>
+    </div>
+    <div class="total-section">
+      <span class="total-section__label">Subtotal:</span>
+      <span class="total-section__price">${{ cart.subtotal.toFixed(2) }}</span>
+      <span class="total-section__label">Tax:</span>
+      <span class="total-section__price">${{ cart.tax.toFixed(2) }}</span>
+      <span class="total-section__label">Total:</span>
+      <span class="total-section__price total-section__total-price">${{ cart.total.toFixed(2) }}</span>
+    </div>
+  </ng-container>
+</div>

@@ -15,7 +15,7 @@ const DishListItem = ({ item, onAddToCart }: Props): JSX.Element => {
           <div className={styles.dish__price}>
             ${item.price}
           </div>
-          <Button className={styles['dish__btn-add']} type="primary" shape="round" size="middle" onClick={(): void => onAddToCart(item)}>
+          <Button className={styles.dish__btnAdd} type="primary" shape="round" size="middle" onClick={(): void => onAddToCart(item)}>
             Add to Cart
           </Button>
         </div>

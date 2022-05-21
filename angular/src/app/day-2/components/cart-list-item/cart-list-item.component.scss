@@ -1,0 +1,37 @@
+.item {
+  display: grid;
+  grid-template-columns: 64px auto;
+  gap: 10px;
+
+  &__img {
+    height: auto;
+  }
+
+  &_btn-adjust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--color-theme);
+    border-color: var(--color-theme);
+  }
+
+  &__name {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: bold;
+  }
+
+  &__total-price {
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
