@@ -1,6 +1,6 @@
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
-export interface TypedFormGroup<T> extends FormGroup {
+export interface TypedFormGroup<T> extends UntypedFormGroup {
   value: Partial<T>;
   getRawValue: () => T;
 }

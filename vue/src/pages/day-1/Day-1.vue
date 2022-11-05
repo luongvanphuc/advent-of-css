@@ -1,10 +1,25 @@
 <script lang="ts">
-// import { MAX_SECONDS } from './shared/models/constantt';
 import { Modal } from 'ant-design-vue';
+import { reactive } from 'vue';
+import type { UnwrapRef } from 'vue';
+import type { FormState } from './shared/models/model';
+import { MAX_SECONDS } from './shared/models/constant';
 import DropSVG from './shared/icons/DropSVG.vue';
 
+interface IData {
+  visible: boolean;
+  duration: number;
+  animating: boolean;
+  ringColor: string;
+  minute: number;
+  second: number;
+  totalInSeconds: number;
+  timer: number;
+  formState: UnwrapRef<FormState>;
+}
+
 export default {
-  data() {
+  data(): IData {
     return {
       visible: false,
       duration: 0,
@@ -14,6 +29,10 @@ export default {
       second: 0,
       totalInSeconds: 0,
       timer: 0,
+      formState: reactive({
+        minutes: 0,
+        seconds: 0,
+      }),
     };
   },
   computed: {
@@ -29,11 +48,11 @@ export default {
   },
   methods: {
     handleSubmitSetting(): void {
-      // const { minutes = 0, seconds = 0 } = this.formState;
-      // this.totalInSeconds = Math.min(MAX_SECONDS, minutes * 60 + seconds);
-      // this.duration = this.totalInSeconds;
-      // this.refreshNumbers();
-      // this.hideModal();
+      const { minutes = 0, seconds = 0 } = this.formState;
+      this.totalInSeconds = Math.min(MAX_SECONDS, minutes * 60 + seconds);
+      this.duration = this.totalInSeconds;
+      this.refreshNumbers();
+      this.hideModal();
     },
     toggleTimer(): void {
       if (!this.animating && this.totalInSeconds > 0) {
@@ -63,7 +82,7 @@ export default {
     refreshNumbers(): void {
       const timeValue = new Date(this.totalInSeconds * 1000)
         .toISOString()
-        .substring(14, 5);
+        .substring(14, 19);
       const [m, s] = timeValue.split(':');
       this.minute = +m;
       this.second = +s;
@@ -108,7 +127,7 @@ export default {
 
     <DropSVG class="drop-svg" />
   </div>
-  <!-- <a-modal
+  <a-modal
     title="Settings"
     :visible="visible"
     @ok="handleSubmitSetting"
@@ -122,7 +141,7 @@ export default {
         <a-input-number v-model:value="formState.seconds" :min="0" :max="59" />
       </a-form-item>
     </a-form>
-  </a-modal> -->
+  </a-modal>
 </template>
 
 <style lang="scss" scoped>

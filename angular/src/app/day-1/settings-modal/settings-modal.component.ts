@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 
 import { TypedFormGroup } from 'interfaces';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -19,7 +19,7 @@ export class SettingsModalComponent implements OnInit {
   public form!: TypedFormGroup<ISettings>;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private modalRef: NzModalRef<SettingsModalComponent, ISettings>,
   ) {}
 
