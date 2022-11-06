@@ -1,7 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --c-text: #2c3e50;
   --c-theme: #42b983;
-  --color-background: #fff;
   --c-border: #dadada;
 }
 

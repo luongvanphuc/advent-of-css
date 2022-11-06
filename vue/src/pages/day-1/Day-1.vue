@@ -6,18 +6,6 @@ import type { FormState } from './shared/models/model';
 import { MAX_SECONDS } from './shared/models/constant';
 import DropSVG from './shared/icons/DropSVG.vue';
 
-interface IData {
-  visible: boolean;
-  duration: number;
-  animating: boolean;
-  ringColor: string;
-  minute: number;
-  second: number;
-  totalInSeconds: number;
-  timer: number;
-  formState: UnwrapRef<FormState>;
-}
-
 export default {
   data(): IData {
     return {
@@ -96,6 +84,18 @@ export default {
   },
   components: { DropSVG },
 };
+
+interface IData {
+  visible: boolean;
+  duration: number;
+  animating: boolean;
+  ringColor: string;
+  minute: number;
+  second: number;
+  totalInSeconds: number;
+  timer: number;
+  formState: UnwrapRef<FormState>;
+}
 </script>
 
 <template>
