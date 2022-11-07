@@ -2,6 +2,7 @@
   <nav>
     <router-link to="/">Day 1</router-link>
     <router-link to="/day-2">Day 2</router-link>
+    <router-link to="/day-3">Day 3</router-link>
   </nav>
 
   <RouterView />
@@ -11,6 +12,7 @@
 nav {
   text-align: center;
   padding: 30px;
+  user-select: none;
 
   a {
     display: inline-block;
