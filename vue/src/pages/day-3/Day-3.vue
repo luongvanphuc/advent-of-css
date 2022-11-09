@@ -260,15 +260,11 @@ export default {
   transition: fill 0.1s ease;
 }
 
-.p-white {
-  &:hover {
-    fill: #ffd200;
-  }
+.p-white:hover {
+  fill: #ffd200;
 }
 
-.p-black {
-  &:hover {
-    fill: #f40082;
-  }
+.p-black:hover {
+  fill: #f40082;
 }
 </style>

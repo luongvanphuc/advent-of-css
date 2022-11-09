@@ -12,6 +12,9 @@ const routes: Routes = [
   }, {
     path: 'day-2',
     loadChildren: () => import('./day-2/day-2.module').then(m => m.Day2Module),
+  }, {
+    path: 'day-3',
+    loadComponent: () => import('./day-3/day-3.component').then(c => c.Day3Component),
   },
 ];
 
