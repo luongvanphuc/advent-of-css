@@ -1,21 +1,17 @@
 <script lang="ts">
+import AudioPlayer from './shared/components/AudioPlayer.vue';
+
 export default {
   methods: {
     play(idx: number): void {
-      const player = this.$refs[`audio${idx}`] as HTMLAudioElement;
-
-      if (!player) {
-        return;
-      }
-
-      if (!player.paused) {
-        player.pause();
-        player.currentTime = 0;
-      }
-
-      player.play();
+      const audios = this.$refs['audio'] as Array<
+        InstanceType<typeof AudioPlayer>
+      >;
+      const player = audios[idx];
+      player?.play();
     },
   },
+  components: { AudioPlayer },
 };
 </script>
 
@@ -170,75 +166,12 @@ export default {
     </svg>
 
     <div class="hidden">
-      <audio ref="audio1">
-        <source src="./shared/audio/key-1.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio2">
-        <source src="./shared/audio/key-2.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio3">
-        <source src="./shared/audio/key-3.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio4">
-        <source src="./shared/audio/key-4.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio5">
-        <source src="./shared/audio/key-5.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio6">
-        <source src="./shared/audio/key-6.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio7">
-        <source src="./shared/audio/key-7.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio8">
-        <source src="./shared/audio/key-8.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio9">
-        <source src="./shared/audio/key-9.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio10">
-        <source src="./shared/audio/key-10.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio11">
-        <source src="./shared/audio/key-11.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio12">
-        <source src="./shared/audio/key-12.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio13">
-        <source src="./shared/audio/key-13.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio14">
-        <source src="./shared/audio/key-14.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio15">
-        <source src="./shared/audio/key-15.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio16">
-        <source src="./shared/audio/key-16.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio17">
-        <source src="./shared/audio/key-17.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio18">
-        <source src="./shared/audio/key-18.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio19">
-        <source src="./shared/audio/key-19.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio20">
-        <source src="./shared/audio/key-20.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio21">
-        <source src="./shared/audio/key-21.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio22">
-        <source src="./shared/audio/key-22.mp3" type="audio/mpeg" />
-      </audio>
-      <audio ref="audio23">
-        <source src="./shared/audio/key-23.mp3" type="audio/mpeg" />
-      </audio>
+      <AudioPlayer
+        v-for="key of Array.from(Array(23).keys())"
+        v-bind:file="`key-${key}.mp3`"
+        ref="audio"
+        :key="key"
+      />
     </div>
   </div>
 </template>
