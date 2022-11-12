@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: #37b2c3;
+  text-align: center;
+}
+
+.svg {
+  max-width: calc(100% - 60px);
+  padding: 50px 0;
+}
+
+.pWhite,
+.pBlack {
+  cursor: pointer;
+  transition: fill 0.1s ease;
+}
+
+.pWhite:hover {
+  fill: #ffd200;
+}
+
+.pBlack:hover {
+  fill: #f40082;
+}
