@@ -1,7 +1,9 @@
-<nav class="text-center py-6">
-  <a routerLink="/day-1">Day 1</a>
-  <a routerLink="/day-2">Day 2</a>
-  <a routerLink="/day-3">Day 3</a>
+<nav class="nav">
+  <a
+    *ngFor="let _ of availableDays; let i = index"
+    [routerLink]="'/day-' + (i + 1)"
+    routerLinkActive="route-active"
+  >Day {{ i + 1 }}</a>
 </nav>
 
 <router-outlet></router-outlet>

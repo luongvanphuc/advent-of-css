@@ -148,28 +148,9 @@
   </svg>
 
   <div class="hidden">
-    <app-audio file="key-1.mp3"></app-audio>
-    <app-audio file="key-2.mp3"></app-audio>
-    <app-audio file="key-3.mp3"></app-audio>
-    <app-audio file="key-4.mp3"></app-audio>
-    <app-audio file="key-5.mp3"></app-audio>
-    <app-audio file="key-6.mp3"></app-audio>
-    <app-audio file="key-7.mp3"></app-audio>
-    <app-audio file="key-8.mp3"></app-audio>
-    <app-audio file="key-9.mp3"></app-audio>
-    <app-audio file="key-10.mp3"></app-audio>
-    <app-audio file="key-11.mp3"></app-audio>
-    <app-audio file="key-12.mp3"></app-audio>
-    <app-audio file="key-13.mp3"></app-audio>
-    <app-audio file="key-14.mp3"></app-audio>
-    <app-audio file="key-15.mp3"></app-audio>
-    <app-audio file="key-16.mp3"></app-audio>
-    <app-audio file="key-17.mp3"></app-audio>
-    <app-audio file="key-18.mp3"></app-audio>
-    <app-audio file="key-19.mp3"></app-audio>
-    <app-audio file="key-20.mp3"></app-audio>
-    <app-audio file="key-21.mp3"></app-audio>
-    <app-audio file="key-22.mp3"></app-audio>
-    <app-audio file="key-23.mp3"></app-audio>
+    <app-audio
+      *ngFor="let i of arr23"
+      file="{{ 'key-' + (i+1) + '.mp3' }}"
+    ></app-audio>
   </div>
 </div>

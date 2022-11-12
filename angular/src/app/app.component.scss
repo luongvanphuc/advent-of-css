@@ -1,4 +1,4 @@
-nav {
+.nav {
   text-align: center;
   padding: 30px;
   user-select: none;
@@ -11,6 +11,10 @@ nav {
 
     &:first-of-type {
       border: 0;
+    }
+
+    &.route-active {
+      color: var(--c-theme);
     }
   }
 }
