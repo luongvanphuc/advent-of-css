@@ -1,0 +1,29 @@
+{
+  "day1": {
+    "info": [
+      "Render the ring and circle: <strong>native SVG</strong>.",
+      "Ring Animation: <strong>native CSS transform</strong>, JS is for triggering events and calculation only.",
+      "Popup & Form: <strong>ng-zorro-antd</strong> with simple Angular <strong>ReactiveForm</strong>."
+    ]
+  },
+  "day2": {
+    "info": [
+      "State management: <strong>RxJS</strong> with simple <strong>BehaviorSubject</strong> and methods in a CartService.",
+      "Styling: <strong>TailwindCSS</strong> & Custom style."
+    ]
+  },
+  "day3": {
+    "info": [
+      "Keys: SVG paths.",
+      "Audio: a hidden audio player under each SVG path to play the sound when click."
+    ]
+  },
+  "app": {
+    "info": [
+      "Angular: <strong>v14</strong>",
+      "ng-zorro-antd: <strong>v14</strong>",
+      "rxjs: <strong>v7</strong>",
+      "tailwindcss: <strong>v3</strong>"
+    ]
+  }
+}

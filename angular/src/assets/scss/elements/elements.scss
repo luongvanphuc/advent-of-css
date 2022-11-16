@@ -5,6 +5,8 @@
 body {
   font-family: Nunito, sans-serif;
   color: var(--c-text);
+  font-size: var(--font-base);
+  overflow-y: overlay;
 }
 
 a.link {

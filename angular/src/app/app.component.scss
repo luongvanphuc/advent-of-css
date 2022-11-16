@@ -18,3 +18,26 @@
     }
   }
 }
+
+.btn-information {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0px 0px 4px 1px rgb(0 0 0 / 20%);
+}
+
+.info-list {
+  list-style-type: disc;
+
+  ::ng-deep {
+    strong {
+      color: var(--c-theme);
+    }
+  }
+}

@@ -23,6 +23,6 @@ import { CartService } from './services/cart.service';
     }]),
   ],
   providers: [CartService],
-  exports: [Day2Component]
+  exports: [Day2Component],
 })
 export class Day2Module { }

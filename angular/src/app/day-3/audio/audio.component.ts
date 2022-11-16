@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from
   standalone: true,
   selector: 'app-audio',
   templateUrl: './audio.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AudioComponent {
   @Input()

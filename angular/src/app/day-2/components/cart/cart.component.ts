@@ -7,7 +7,7 @@ import { CartService } from '../../services/cart.service';
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {
 
@@ -23,7 +23,7 @@ export class CartComponent {
     this.cartService.decreaseItemQty(item.id);
   };
 
-  public trackByFn(index: number, item: CartItem) {
+  public trackByFn(_: number, item: CartItem): string {
     return item.id;
   }
 }

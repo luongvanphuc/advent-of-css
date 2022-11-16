@@ -6,7 +6,7 @@ import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-dish-list',
   templateUrl: './dish-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DishListComponent {
 
