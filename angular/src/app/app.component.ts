@@ -22,13 +22,13 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  public logInfo(): void {
+  public showDrawer(): void {
     const url = this.router.url;
     const day = url.split('-')[1];
 
     this.dayInfo = this._appInfo[`day${day}`]?.info;
     this.isDrawerVisible = true;
-}
+  }
 
   public closeDrawer(): void {
     this.isDrawerVisible = false;

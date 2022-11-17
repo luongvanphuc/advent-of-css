@@ -14,7 +14,6 @@ const Audio: ForwardRefRenderFunction<AudioMethods, LayoutProps> = (props, ref) 
       }
 
       const player = audioRef.current;
-      console.log(player);
 
       if (!player.paused) {
         player.pause();

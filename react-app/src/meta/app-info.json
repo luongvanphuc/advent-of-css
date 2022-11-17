@@ -1,0 +1,27 @@
+{
+  "day1": {
+    "info": [
+      "Render the ring and circle: <strong>native SVG</strong>.",
+      "Ring Animation: <strong>native CSS transform</strong>, JS is for triggering events and calculation only."
+    ]
+  },
+  "day2": {
+    "info": [
+      "State management: Provider pattern with <strong>React Context & Provider</strong>.",
+      "Styling: <strong>TailwindCSS</strong> & Custom style."
+    ]
+  },
+  "day3": {
+    "info": [
+      "Keys: SVG paths.",
+      "Audio: a hidden audio player under each SVG path to play the sound when click."
+    ]
+  },
+  "app": {
+    "info": [
+      "React: <strong>v17</strong>",
+      "antd: <strong>v4</strong>",
+      "tailwindcss: <strong>v3</strong>"
+    ]
+  }
+}

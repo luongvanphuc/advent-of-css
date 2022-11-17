@@ -10,7 +10,10 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { '@primary-color': '#727cf5' },
+            modifyVars: {
+              '@primary-color': '#727cf5',
+              '@font-size-base': '15px', // it should be consistent with var(--font-base) in the body
+            },
             javascriptEnabled: true,
           },
         },
