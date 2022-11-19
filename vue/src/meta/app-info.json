@@ -7,7 +7,7 @@
   },
   "day2": {
     "info": [
-      "State management: Provider pattern with <strong>React Context & Provider</strong>.",
+      "State management: <strong>Pinia</strong>.",
       "Styling: <strong>TailwindCSS</strong> & Custom style."
     ]
   },
@@ -19,10 +19,11 @@
   },
   "app": {
     "info": [
-      "React: <strong>v17</strong>",
-      "antd: <strong>v4</strong>",
+      "Vue: <strong>v3</strong>",
+      "vue-router: <strong>v4</strong>",
+      "ant-design-vue: <strong>v3</strong>",
       "tailwindcss: <strong>v3</strong>",
-      "typescript: <strong>v4.5</strong>"
+      "typescript: <strong>v4.7</strong>"
     ]
   }
 }

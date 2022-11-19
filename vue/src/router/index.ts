@@ -6,6 +6,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/day-1',
+    },
+    {
+      path: '/day-1',
       name: 'Day 1',
       component: Day1,
     },

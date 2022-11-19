@@ -7,7 +7,7 @@ export default {
       const audios = this.$refs['audio'] as Array<
         InstanceType<typeof AudioPlayer>
       >;
-      const player = audios[idx];
+      const player = audios[idx - 1];
       player?.play();
     },
   },

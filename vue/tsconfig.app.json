@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/meta/app-info.json"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "target": "es2017",
@@ -8,6 +8,7 @@
       "es2017",
       "dom"
     ],
+    "moduleResolution": "node",
     "composite": true,
     "baseUrl": ".",
     "paths": {

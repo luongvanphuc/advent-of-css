@@ -1,10 +1,14 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
+/* don't move this scss import below the App.vue import
+  it will cause a change in CSS conflict (specificity) between tailwind
+  and ant design
+*/
+import './assets/base.scss';
+
 import App from './App.vue';
 import router from './router';
-
-import './assets/main.scss';
 
 const app = createApp(App);
 

@@ -99,7 +99,6 @@ interface IData {
 </script>
 
 <template>
-  <!-- https://stackoverflow.com/questions/42234855/  is-it-possible-to-draw-a-partial-circle-outline-in-css-open-ring-shape -->
   <div class="wrapper">
     <div class="circle">
       <span class="time">
@@ -232,6 +231,7 @@ $perimeter: 255 * 2 * 3.14159; // 2 * pi * r
 
   &__icon {
     width: 30px;
+    margin: auto;
   }
 }
 

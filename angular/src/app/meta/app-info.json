@@ -23,7 +23,8 @@
       "Angular: <strong>v14</strong>",
       "ng-zorro-antd: <strong>v14</strong>",
       "rxjs: <strong>v7</strong>",
-      "tailwindcss: <strong>v3</strong>"
+      "tailwindcss: <strong>v3</strong>",
+      "typescript: <strong>v4.7</strong>"
     ]
   }
 }
