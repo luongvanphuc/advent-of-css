@@ -10,6 +10,8 @@
     ],
     "moduleResolution": "node",
     "composite": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

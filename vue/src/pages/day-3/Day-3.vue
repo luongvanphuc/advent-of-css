@@ -168,9 +168,9 @@ export default {
     <div class="hidden">
       <AudioPlayer
         v-for="key of Array.from(Array(23).keys())"
-        v-bind:file="`key-${key}.mp3`"
-        ref="audio"
+        :file="`key-${key}.mp3`"
         :key="key"
+        ref="audio"
       />
     </div>
   </div>

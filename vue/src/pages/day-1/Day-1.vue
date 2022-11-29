@@ -115,8 +115,8 @@ interface IData {
 
     <svg class="ring-svg" height="520" width="520">
       <circle
-        v-bind:style="{ '--duration': cssDuration, '--ring-color': ringColor }"
-        v-bind:class="{ animate: animating }"
+        :style="{ '--duration': cssDuration, '--ring-color': ringColor }"
+        :class="{ animate: animating }"
         class="ring"
         cx="260"
         cy="260"
