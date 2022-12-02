@@ -41,7 +41,7 @@ const Layout = (): ReactElement => {
     <>
       <nav>
         <ul className={styles.links}>
-          {Array.from(Array(3).keys()).map((i) => (
+          {Array.from(Array(4).keys()).map((i) => (
             <li key={i}>
               <NavLink
                 to={'/day-' + (i + 1)}

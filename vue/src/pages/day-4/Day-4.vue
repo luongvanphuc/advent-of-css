@@ -8,7 +8,7 @@ type KeysRef = Array<InstanceType<typeof Key>>;
 const key = ref<KeysRef>();
 const keys = computed(() => key.value as Array<InstanceType<typeof Key>>);
 
-function handleKeydown(e: KeyboardEvent) {
+function handleKeydown(e: KeyboardEvent): void {
   const keyEl = keys.value.find((k) => k.$props.data?.code === e.code);
   keyEl?.jiggle();
 }
@@ -28,7 +28,7 @@ onUnmounted(() => {
       :key="index"
       v-for="(row, index) of Rows"
     >
-      <Key v-for="key of row" ref="key" :key="key.char" :data="key" />
+      <Key v-for="key of row" ref="key" :key="key.code" :data="key" />
     </div>
   </div>
 </template>

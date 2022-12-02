@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { ReactElement } from 'react';
+import React, { useRef, ReactElement } from 'react';
 
 import { AudioMethods } from './components/audio';
 import Audio from './components/audio';

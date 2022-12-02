@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier',
+    '@typescript-eslint/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
