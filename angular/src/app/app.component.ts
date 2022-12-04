@@ -10,7 +10,7 @@ import { AppInfo } from './meta/app-info.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public availableDays = Array.from(Array(3).keys());
+  public availableDays = Array.from(Array(4).keys());
   public isDrawerVisible = false;
   public dayInfo: Array<string> = [];
 

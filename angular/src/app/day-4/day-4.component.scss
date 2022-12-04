@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  gap: 10px;
+  width: 940px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+
+  &--1 :last-child,
+  &--2 :first-child,
+  &--3 :first-child,
+  &--3 :last-child,
+  &--4 :first-child,
+  &--4 :last-child {
+    flex-grow: 1;
+
+    ::ng-deep {
+      .key {
+        width: 100%;
+      }
+    }
+  }
+}

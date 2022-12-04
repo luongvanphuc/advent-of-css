@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, TrackByFunction } from '@angular/core';
 import { CartItem } from '../../models';
 
 import { CartService } from '../../services/cart.service';
@@ -23,7 +23,5 @@ export class CartComponent {
     this.cartService.decreaseItemQty(item.id);
   };
 
-  public trackByFn(_: number, item: CartItem): string {
-    return item.id;
-  }
+  public trackByFn: TrackByFunction<CartItem> = (_, item: CartItem): CartItem['id'] => item.id;
 }

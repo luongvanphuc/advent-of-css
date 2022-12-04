@@ -18,6 +18,12 @@
       "Audio: a hidden audio player under each SVG path to play the sound when click."
     ]
   },
+  "day4": {
+    "info": [
+      "Listen to <strong>keydown</strong> event => trigger the jiggle method of each key.",
+      "Layout: simple Flexbox"
+    ]
+  },
   "app": {
     "info": [
       "Angular: <strong>v14</strong>",

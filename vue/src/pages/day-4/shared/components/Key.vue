@@ -32,7 +32,6 @@ defineExpose({
 <style scoped lang="scss">
 .key {
   display: inline-block;
-  text-align: center;
   width: 50px;
   height: 50px;
   line-height: 50px;

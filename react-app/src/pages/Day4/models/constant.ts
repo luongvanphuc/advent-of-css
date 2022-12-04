@@ -18,7 +18,7 @@ const Row1: ReadonlyArray<Key> = [
 ];
 
 const Row2: ReadonlyArray<Key> = [
-  new Key('TAB', 'Tab', '#868888'),
+  new Key('Tab', 'Tab', '#868888'),
   new Key('Q', 'KeyQ'),
   new Key('W', 'KeyW'),
   new Key('E', 'KeyE'),
@@ -35,7 +35,7 @@ const Row2: ReadonlyArray<Key> = [
 ];
 
 const Row3: ReadonlyArray<Key> = [
-  new Key('CAPS', 'CapsLock', '#868888'),
+  new Key('Caps', 'CapsLock', '#868888'),
   new Key('A', 'KeyA'),
   new Key('S', 'KeyS'),
   new Key('D', 'KeyD'),

@@ -149,7 +149,7 @@
 
   <div class="hidden">
     <app-audio
-      *ngFor="let i of arr23"
+      *ngFor="let i of arr23; trackBy: trackById"
       file="{{ 'key-' + (i+1) + '.mp3' }}"
     ></app-audio>
   </div>

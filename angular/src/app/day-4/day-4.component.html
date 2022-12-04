@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div
+    class="row"
+    [class]="'row--' + (i + 1)"
+    *ngFor="let row of Rows; let i = index; trackBy: trackByIndex"
+  >
+    <app-key *ngFor="let key of row; trackBy: trackByKeyCode" [key]="key">
+    </app-key>
+  </div>
+</div>

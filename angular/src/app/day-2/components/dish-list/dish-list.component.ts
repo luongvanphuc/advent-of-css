@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, TrackByFunction } from '@angular/core';
 
 import { Dish } from '../../models';
 import { CartService } from '../../services/cart.service';
@@ -18,4 +18,6 @@ export class DishListComponent {
   public handleAddItemToCart(item: Dish): void {
     this.cartService.addItem(item);
   };
+
+  public trackByFn: TrackByFunction<Dish> = (_, item: Dish): Dish['id'] => item.id;
 }

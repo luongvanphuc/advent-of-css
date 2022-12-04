@@ -15,6 +15,9 @@ const routes: Routes = [
   }, {
     path: 'day-3',
     loadComponent: () => import('./day-3/day-3.component').then(c => c.Day3Component),
+  }, {
+    path: 'day-4',
+    loadComponent: () => import('./day-4/day-4.component').then(c => c.Day4Component),
   },
 ];
 

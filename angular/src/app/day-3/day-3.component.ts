@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, QueryList, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, QueryList, TrackByFunction, ViewChildren } from '@angular/core';
 import { AudioComponent } from './audio/audio.component';
 
 @Component({
@@ -19,4 +19,6 @@ export class Day3Component {
   public play(idx: number): void {
     this.audioPlayers.get(idx - 1)?.play();
   }
+
+  public trackById: TrackByFunction<number> = (_, i: number): number => i;
 }
