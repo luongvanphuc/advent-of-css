@@ -49,7 +49,7 @@ export default {
         this.timer = setInterval(() => {
           this.totalInSeconds > 1 ? (this.totalInSeconds -= 1) : this.finish();
           this.refreshNumbers();
-        }, 1000);
+        }, 1000) as unknown as number;
       } else {
         this.reset();
       }

@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/react-app/build
+/angular/dist
 test
 
 
