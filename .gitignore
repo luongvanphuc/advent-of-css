@@ -3,6 +3,7 @@ node_modules
 /dist
 /react-app/build
 /angular/dist
+/vue/dist
 test
 
 
