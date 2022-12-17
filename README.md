@@ -4,9 +4,9 @@
 Solutions for [Advent of JavaScript](https://www.adventofjs.com/) & [Advent of CSS](https://www.adventofcss.com/) Challenges, were written with Angular, React, and Vue.
 
 Demo:  
-Angular: https://angular-advent-css-js.phucluong.com/  
-React: https://react-advent-css-js.phucluong.com/  
-Vue: https://vue-advent-css-js.phucluong.com/  
+Angular: https://advent-angular.phucluong.com/  
+React: https://advent-react.phucluong.com/  
+Vue: https://advent-vue.phucluong.com/  
 
 ![screencast 2022-12-13 06-20-16](https://user-images.githubusercontent.com/4593723/207181291-c7329ef5-3fee-45e8-a99a-4f3a1e1365dc.gif)
 

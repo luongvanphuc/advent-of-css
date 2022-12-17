@@ -56,6 +56,10 @@ const Layout = (): ReactElement => {
         </ul>
       </nav>
 
+      <div className={styles.github}>
+        <iframe src="https://ghbtns.com/github-btn.html?user=luongvanphuc&repo=advent-of-css&type=star&size=large&text=false" width="40" height="30" title="GitHub"></iframe>
+      </div>
+
       <Button
         className={styles.btnInformation}
         type="primary"

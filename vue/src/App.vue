@@ -26,6 +26,10 @@
     </ul>
   </a-drawer>
 
+  <div class="github">
+    <iframe src="https://ghbtns.com/github-btn.html?user=luongvanphuc&repo=advent-of-css&type=star&size=large&text=false" frameborder="0" scrolling="0" width="40" height="30" title="GitHub"></iframe>
+  </div>
+
   <a-button
     class="btn-information"
     type="primary"
@@ -89,6 +93,13 @@ nav {
   top: 20px;
   right: 20px;
   font-size: 15px;
+  z-index: 999;
+}
+
+.github {
+  position: fixed;
+  top: 23px;
+  right: 70px;
   z-index: 999;
 }
 
