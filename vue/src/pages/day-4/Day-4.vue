@@ -6,10 +6,11 @@ import Key from './shared/components/Key.vue';
 type KeysRef = Array<InstanceType<typeof Key>>;
 
 const key = ref<KeysRef>();
-const keys = computed(() => key.value as Array<InstanceType<typeof Key>>);
 
 function handleKeydown(e: KeyboardEvent): void {
-  const keyEl = keys.value.find((k) => k.$props.data?.code === e.code);
+  const keys = key.value as Array<InstanceType<typeof Key>>;
+  const keyEl = keys.find((k) => k.$props.data?.code === e.code);
+
   keyEl?.jiggle();
 }
 
